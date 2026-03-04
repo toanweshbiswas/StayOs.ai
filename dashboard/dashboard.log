@@ -1,0 +1,139 @@
+
+> stayos-dashboard@1.0.0 dev
+> vite --port 5174
+
+
+  VITE v6.4.1  ready in 201 ms
+
+  ➜  Local:   http://localhost:5174/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+10:16:39 pm [vite] (client) hmr update /src/pages/Properties.tsx, /src/index.css
+10:17:26 pm [vite] (client) hmr update /src/pages/Waitlist.tsx, /src/index.css
+10:18:23 pm [vite] (client) hmr update /src/pages/Blog.tsx, /src/index.css
+10:19:33 pm [vite] (client) hmr update /src/pages/Careers.tsx, /src/index.css
+10:21:51 pm [vite] (client) hmr update /src/components/Sidebar.tsx, /src/index.css
+10:22:41 pm [vite] (client) hmr update /src/components/Sidebar.tsx, /src/index.css
+10:22:41 pm [vite] Internal server error: /Users/anweshbiswas/Desktop/StayOs/dashboard/src/components/Sidebar.tsx: Identifier 'Sidebar' has already been declared. (57:24)
+
+  55 |
+  56 |
+> 57 | export default function Sidebar() {
+     |                         ^
+  58 |     const { logout } = useAuth();
+  59 |
+  60 |     return (
+  Plugin: vite:react-babel
+  File: /Users/anweshbiswas/Desktop/StayOs/dashboard/src/components/Sidebar.tsx:57:24
+  55 |  
+  56 |  
+  57 |  export default function Sidebar() {
+     |                          ^
+  58 |      const { logout } = useAuth();
+  59 |  
+      at constructor (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:365:19)
+      at TypeScriptParserMixin.raise (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:6599:19)
+      at TypeScriptScopeHandler.checkRedeclarationInScope (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:1619:19)
+      at TypeScriptScopeHandler.declareName (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:1585:12)
+      at TypeScriptScopeHandler.declareName (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:4880:11)
+      at TypeScriptParserMixin.registerFunctionStatementId (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:13466:16)
+      at TypeScriptParserMixin.registerFunctionStatementId (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:9178:13)
+      at TypeScriptParserMixin.parseFunction (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:13450:12)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:13907:19)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:9402:18)
+      at TypeScriptParserMixin.parseExport (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:13828:25)
+      at TypeScriptParserMixin.parseExport (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:9385:20)
+      at TypeScriptParserMixin.parseStatementContent (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:12878:27)
+      at TypeScriptParserMixin.parseStatementContent (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:9508:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:12767:17)
+      at TypeScriptParserMixin.parseModuleItem (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:12744:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:13316:36)
+      at TypeScriptParserMixin.parseBlockBody (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:13309:10)
+      at TypeScriptParserMixin.parseProgram (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:12622:10)
+      at TypeScriptParserMixin.parseTopLevel (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:12612:25)
+      at TypeScriptParserMixin.parse (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:14488:25)
+      at TypeScriptParserMixin.parse (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:10126:18)
+      at parse (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:14522:38)
+      at parser (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/core/lib/parser/index.js:41:34)
+      at parser.next (<anonymous>)
+      at normalizeFile (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/core/lib/transformation/normalize-file.js:64:37)
+      at normalizeFile.next (<anonymous>)
+      at run (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/core/lib/transformation/index.js:22:50)
+      at run.next (<anonymous>)
+      at transform (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/core/lib/transform.js:22:33)
+      at transform.next (<anonymous>)
+      at step (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/gensync/index.js:261:32)
+      at /Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/gensync/index.js:273:13
+      at async.call.result.err.err (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/gensync/index.js:223:11)
+      at /Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/gensync/index.js:189:28
+      at /Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/core/lib/gensync-utils/async.js:67:7
+      at /Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/gensync/index.js:113:33
+      at step (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/gensync/index.js:287:14)
+      at /Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/gensync/index.js:273:13
+      at async.call.result.err.err (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/gensync/index.js:223:11)
+10:22:41 pm [vite] Internal server error: /Users/anweshbiswas/Desktop/StayOs/dashboard/src/components/Sidebar.tsx: Identifier 'Sidebar' has already been declared. (57:24)
+
+  55 |
+  56 |
+> 57 | export default function Sidebar() {
+     |                         ^
+  58 |     const { logout } = useAuth();
+  59 |
+  60 |     return (
+  Plugin: vite:react-babel
+  File: /Users/anweshbiswas/Desktop/StayOs/dashboard/src/components/Sidebar.tsx:57:24
+  55 |  
+  56 |  
+  57 |  export default function Sidebar() {
+     |                          ^
+  58 |      const { logout } = useAuth();
+  59 |  
+      at constructor (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:365:19)
+      at TypeScriptParserMixin.raise (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:6599:19)
+      at TypeScriptScopeHandler.checkRedeclarationInScope (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:1619:19)
+      at TypeScriptScopeHandler.declareName (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:1585:12)
+      at TypeScriptScopeHandler.declareName (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:4880:11)
+      at TypeScriptParserMixin.registerFunctionStatementId (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:13466:16)
+      at TypeScriptParserMixin.registerFunctionStatementId (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:9178:13)
+      at TypeScriptParserMixin.parseFunction (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:13450:12)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:13907:19)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:9402:18)
+      at TypeScriptParserMixin.parseExport (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:13828:25)
+      at TypeScriptParserMixin.parseExport (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:9385:20)
+      at TypeScriptParserMixin.parseStatementContent (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:12878:27)
+      at TypeScriptParserMixin.parseStatementContent (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:9508:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:12767:17)
+      at TypeScriptParserMixin.parseModuleItem (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:12744:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:13316:36)
+      at TypeScriptParserMixin.parseBlockBody (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:13309:10)
+      at TypeScriptParserMixin.parseProgram (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:12622:10)
+      at TypeScriptParserMixin.parseTopLevel (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:12612:25)
+      at TypeScriptParserMixin.parse (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:14488:25)
+      at TypeScriptParserMixin.parse (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:10126:18)
+      at parse (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/parser/lib/index.js:14522:38)
+      at parser (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/core/lib/parser/index.js:41:34)
+      at parser.next (<anonymous>)
+      at normalizeFile (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/core/lib/transformation/normalize-file.js:64:37)
+      at normalizeFile.next (<anonymous>)
+      at run (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/core/lib/transformation/index.js:22:50)
+      at run.next (<anonymous>)
+      at transform (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/core/lib/transform.js:22:33)
+      at transform.next (<anonymous>)
+      at step (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/gensync/index.js:261:32)
+      at /Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/gensync/index.js:273:13
+      at async.call.result.err.err (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/gensync/index.js:223:11)
+      at /Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/gensync/index.js:189:28
+      at /Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/@babel/core/lib/gensync-utils/async.js:67:7
+      at /Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/gensync/index.js:113:33
+      at step (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/gensync/index.js:287:14)
+      at /Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/gensync/index.js:273:13
+      at async.call.result.err.err (/Users/anweshbiswas/Desktop/StayOs/dashboard/node_modules/gensync/index.js:223:11)
+10:23:13 pm [vite] (client) hmr update /src/components/Sidebar.tsx, /src/index.css
+10:23:39 pm [vite] (client) hmr update /src/App.tsx, /src/index.css
+10:43:59 pm [vite] (client) hmr update /src/pages/Properties.tsx, /src/index.css
+10:44:27 pm [vite] (client) hmr update /src/pages/Blog.tsx, /src/index.css
+10:44:38 pm [vite] (client) hmr update /src/pages/Blog.tsx, /src/index.css
+10:45:00 pm [vite] (client) hmr update /src/pages/Careers.tsx, /src/index.css
+10:46:01 pm [vite] (client) hmr update /src/pages/Careers.tsx, /src/index.css
+10:46:26 pm [vite] (client) hmr update /src/pages/Careers.tsx, /src/index.css
+10:46:41 pm [vite] (client) hmr update /src/pages/Careers.tsx, /src/index.css

@@ -1,0 +1,105 @@
+
+> stayos-backend@1.0.0 dev
+> ts-node-dev --respawn --transpile-only src/index.ts
+
+[INFO] 21:50:48 ts-node-dev ver. 2.0.0 (using ts-node ver. 10.9.2, typescript ver. 5.9.3)
+🚀 StayOs API running at http://localhost:3001
+📚 Health: http://localhost:3001/api/health
+PrismaClientKnownRequestError: 
+Invalid `prisma.maintenanceRequest.findMany()` invocation in
+/Users/anweshbiswas/Desktop/StayOs/backend/src/routes/admin.ts:40:39
+
+  37 prisma.careerJob.count({ where: { isActive: true } }),
+  38 prisma.careerApplication.count(),
+  39 prisma.waitlistApplication.findMany({ take: 5, orderBy: { createdAt: 'desc' }, select: { firstName: true, lastName: true, email: true, role: true, status: true, createdAt: true } }),
+→ 40 prisma.maintenanceRequest.findMany(
+Timed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 1)
+    at $n.handleRequestError (/Users/anweshbiswas/Desktop/StayOs/backend/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/Users/anweshbiswas/Desktop/StayOs/backend/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/Users/anweshbiswas/Desktop/StayOs/backend/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at l (/Users/anweshbiswas/Desktop/StayOs/backend/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async Promise.all (index 12)
+    at /Users/anweshbiswas/Desktop/StayOs/backend/src/routes/admin.ts:27:13 {
+  code: 'P2024',
+  clientVersion: '5.22.0',
+  meta: { modelName: 'MaintenanceRequest', connection_limit: 1, timeout: 10 }
+}
+PrismaClientKnownRequestError: 
+Invalid `prisma.waitlistApplication.count()` invocation in
+/Users/anweshbiswas/Desktop/StayOs/backend/src/routes/admin.ts:31:40
+
+  28 prisma.property.count(),
+  29 prisma.property.count({ where: { status: 'AVAILABLE' } }),
+  30 prisma.waitlistApplication.count(),
+→ 31 prisma.waitlistApplication.count(
+Timed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 1)
+    at $n.handleRequestError (/Users/anweshbiswas/Desktop/StayOs/backend/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/Users/anweshbiswas/Desktop/StayOs/backend/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/Users/anweshbiswas/Desktop/StayOs/backend/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at l (/Users/anweshbiswas/Desktop/StayOs/backend/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async Promise.all (index 3)
+    at /Users/anweshbiswas/Desktop/StayOs/backend/src/routes/admin.ts:27:13 {
+  code: 'P2024',
+  clientVersion: '5.22.0',
+  meta: {
+    modelName: 'WaitlistApplication',
+    connection_limit: 1,
+    timeout: 10
+  }
+}
+PrismaClientKnownRequestError: 
+Invalid `prisma.careerJob.count()` invocation in
+/Users/anweshbiswas/Desktop/StayOs/backend/src/routes/admin.ts:37:30
+
+  34 prisma.lease.count({ where: { status: 'ACTIVE' } }),
+  35 prisma.blogPost.count(),
+  36 prisma.blogPost.count({ where: { published: true } }),
+→ 37 prisma.careerJob.count(
+Timed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 1)
+    at $n.handleRequestError (/Users/anweshbiswas/Desktop/StayOs/backend/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/Users/anweshbiswas/Desktop/StayOs/backend/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/Users/anweshbiswas/Desktop/StayOs/backend/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at l (/Users/anweshbiswas/Desktop/StayOs/backend/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async Promise.all (index 9)
+    at /Users/anweshbiswas/Desktop/StayOs/backend/src/routes/admin.ts:27:13 {
+  code: 'P2024',
+  clientVersion: '5.22.0',
+  meta: { modelName: 'CareerJob', connection_limit: 1, timeout: 10 }
+}
+[INFO] 21:56:47 Restarting: /Users/anweshbiswas/Desktop/StayOs/backend/src/routes/admin.ts has been modified
+🚀 StayOs API running at http://localhost:3001
+📚 Health: http://localhost:3001/api/health
+[INFO] 22:21:05 Restarting: /Users/anweshbiswas/Desktop/StayOs/backend/src/routes/admin.ts has been modified
+🚀 StayOs API running at http://localhost:3001
+📚 Health: http://localhost:3001/api/health
+[INFO] 22:21:25 Restarting: /Users/anweshbiswas/Desktop/StayOs/backend/src/routes/admin.ts has been modified
+🚀 StayOs API running at http://localhost:3001
+📚 Health: http://localhost:3001/api/health
+[INFO] 22:41:59 Restarting: /Users/anweshbiswas/Desktop/StayOs/backend/src/index.ts has been modified
+🚀 StayOs API running at http://localhost:3001
+📚 Health: http://localhost:3001/api/health
+[INFO] 22:51:05 Restarting: /Users/anweshbiswas/Desktop/StayOs/backend/src/routes/careers.ts has been modified
+🚀 StayOs API running at http://localhost:3001
+📚 Health: http://localhost:3001/api/health
+[INFO] 22:52:30 Restarting: /Users/anweshbiswas/Desktop/StayOs/backend/src/routes/careers.ts has been modified
+🚀 StayOs API running at http://localhost:3001
+📚 Health: http://localhost:3001/api/health
+[INFO] 23:26:34 Restarting: /Users/anweshbiswas/Desktop/StayOs/backend/src/routes/upload.ts has been modified
+Error: Cannot find module '@supabase/supabase-js'
+Require stack:
+- /Users/anweshbiswas/Desktop/StayOs/backend/src/routes/upload.ts
+- /Users/anweshbiswas/Desktop/StayOs/backend/src/index.ts
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at require (node:internal/modules/helpers:182:18)
+    at Object.<anonymous> (/Users/anweshbiswas/Desktop/StayOs/backend/src/routes/upload.ts:3:1)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._compile (/Users/anweshbiswas/Desktop/StayOs/backend/node_modules/source-map-support/source-map-support.js:568:25)
+    at Module.m._compile (/private/var/folders/kp/v71z2z2567s9t6wbqx33mzlw0000gn/T/ts-node-dev-hook-7945370089371431.js:69:33)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at require.extensions..jsx.require.extensions..js (/private/var/folders/kp/v71z2z2567s9t6wbqx33mzlw0000gn/T/ts-node-dev-hook-7945370089371431.js:114:20)
+[ERROR] 23:26:35 Error: Cannot find module '@supabase/supabase-js'
+Require stack:
+- /Users/anweshbiswas/Desktop/StayOs/backend/src/routes/upload.ts
+- /Users/anweshbiswas/Desktop/StayOs/backend/src/index.ts

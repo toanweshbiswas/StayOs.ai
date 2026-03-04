@@ -1,0 +1,174 @@
+// StayOs Database Schema — Prisma + SQLite
+// Enums are replaced with String types for SQLite compatibility
+// Upgrade to PostgreSQL by changing provider to "postgresql" and converting fields back to enums
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// Roles: ADMIN | TENANT | LANDLORD
+// PropertyStatus: AVAILABLE | COMING_SOON | FULLY_BOOKED
+// MaintenanceStatus: OPEN | IN_PROGRESS | RESOLVED
+// LeaseStatus: ACTIVE | EXPIRED | TERMINATED
+// ApplicationStatus: PENDING | APPROVED | REJECTED | WAITLISTED
+
+model User {
+  id                   String                @id @default(cuid())
+  email                String                @unique
+  password             String
+  firstName            String
+  lastName             String
+  phone                String?
+  role                 String                @default("TENANT")
+  createdAt            DateTime              @default(now())
+  updatedAt            DateTime              @updatedAt
+  waitlistApplication  WaitlistApplication?
+  leases               Lease[]
+  maintenanceRequests  MaintenanceRequest[]
+  careerApplications   CareerApplication[]
+}
+
+model Property {
+  id                   String               @id @default(cuid())
+  name                 String
+  location             String
+  neighborhood         String?
+  address              String?
+  sqft                 Int
+  bhk                  Int
+  price                Int
+  status               String               @default("AVAILABLE")
+  availableDate        String               @default("Available Now")
+  availableRooms       String
+  totalRooms           Int
+  isFemaleOnly         Boolean              @default(false)
+  description          String?
+  occupancyDescription String?
+  amenities            String?
+  images               PropertyImage[]
+  leases               Lease[]
+  maintenanceRequests  MaintenanceRequest[]
+  createdAt            DateTime             @default(now())
+  updatedAt            DateTime             @updatedAt
+}
+
+model PropertyImage {
+  id         String   @id @default(cuid())
+  url        String
+  alt        String?
+  isPrimary  Boolean  @default(false)
+  property   Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  propertyId String
+  createdAt  DateTime @default(now())
+}
+
+model WaitlistApplication {
+  id                String   @id @default(cuid())
+  firstName         String
+  lastName          String
+  email             String   @unique
+  phone             String?
+  role              String
+  preferredLocation String?
+  propertyLink      String?
+  message           String?
+  status            String   @default("PENDING")
+  user              User?    @relation(fields: [userId], references: [id])
+  userId            String?  @unique
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+model Lease {
+  id          String   @id @default(cuid())
+  tenant      User     @relation(fields: [tenantId], references: [id])
+  tenantId    String
+  property    Property @relation(fields: [propertyId], references: [id])
+  propertyId  String
+  startDate   DateTime
+  endDate     DateTime
+  monthlyRent Int
+  deposit     Int
+  status      String   @default("ACTIVE")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model MaintenanceRequest {
+  id          String    @id @default(cuid())
+  title       String
+  description String
+  category    String
+  status      String    @default("OPEN")
+  priority    String    @default("medium")
+  tenant      User      @relation(fields: [tenantId], references: [id])
+  tenantId    String
+  property    Property  @relation(fields: [propertyId], references: [id])
+  propertyId  String
+  resolvedAt  DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model BlogPost {
+  id          String    @id @default(cuid())
+  title       String
+  slug        String    @unique
+  excerpt     String
+  content     String
+  coverImage  String?
+  category    String
+  author      String    @default("StayOs Editorial")
+  tags        String?
+  published   Boolean   @default(false)
+  publishedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model CareerJob {
+  id           String              @id @default(cuid())
+  title        String
+  department   String
+  location     String              @default("Bengaluru, India")
+  type         String              @default("Full-time")
+  experience   String
+  description  String
+  requirements String
+  isActive     Boolean             @default(true)
+  applications CareerApplication[]
+  createdAt    DateTime            @default(now())
+  updatedAt    DateTime            @updatedAt
+}
+
+model CareerApplication {
+  id          String    @id @default(cuid())
+  firstName   String
+  lastName    String
+  email       String
+  phone       String?
+  resumeUrl   String?
+  coverLetter String?
+  job         CareerJob @relation(fields: [jobId], references: [id])
+  jobId       String
+  user        User?     @relation(fields: [userId], references: [id])
+  userId      String?
+  status      String    @default("PENDING")
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Neighborhood {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  city        String   @default("Bengaluru")
+  image       String?
+  description String?
+  createdAt   DateTime @default(now())
+}
