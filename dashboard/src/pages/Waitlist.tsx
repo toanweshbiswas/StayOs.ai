@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { api } from '../services/api';
-import { CheckCircle, XCircle, Clock, Eye, X, ChevronDown } from 'lucide-react';
+import { CheckCircle, XCircle, Clock, Eye, X } from 'lucide-react';
 
 const STATUS_OPTIONS = ['PENDING', 'APPROVED', 'WAITLISTED', 'REJECTED'];
 
