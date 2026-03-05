@@ -6,6 +6,27 @@ import jwt from 'jsonwebtoken';
 const router = Router();
 const prisma = new PrismaClient();
 
+// GET /api/auth/setup-db-free - TEMPORARY SEED ROUTE
+router.get('/setup-db-free', async (req: Request, res: Response) => {
+    try {
+        const hashedPassword = await bcrypt.hash('stayos-admin-2026', 10);
+        await prisma.user.upsert({
+            where: { email: 'admin@stayos.in' },
+            update: {},
+            create: {
+                email: 'admin@stayos.in',
+                password: hashedPassword,
+                firstName: 'StayOs',
+                lastName: 'Admin',
+                role: 'ADMIN',
+            },
+        });
+        res.send('Admin account created successfully! You can now log in at https://admin-stayos-ai.netlify.app');
+    } catch (err: any) {
+        res.status(500).json({ error: 'Setup failed: ' + err.message });
+    }
+});
+
 // POST /api/auth/login
 router.post('/login', async (req: Request, res: Response): Promise<void> => {
     try {
