@@ -1,0 +1,26 @@
+{
+    "nodeModulesDir": "auto",
+    "compilerOptions": {
+        "allowJs": true,
+        "lib": [
+            "deno.window",
+            "dom"
+        ]
+    },
+    "tasks": {
+        "start": "deno run --allow-all --env-file=.env src/index.ts",
+        "dev": "deno run --allow-all --watch --env-file=.env src/index.ts"
+    },
+    "imports": {
+        "express": "npm:express@^4.19.2",
+        "cors": "npm:cors@^2.8.5",
+        "dotenv": "npm:dotenv@^16.4.5",
+        "@prisma/client": "npm:@prisma/client@^5.22.0",
+        "@supabase/supabase-js": "npm:@supabase/supabase-js@^2.45.0",
+        "bcryptjs": "npm:bcryptjs@^2.4.3",
+        "jsonwebtoken": "npm:jsonwebtoken@^9.0.2",
+        "multer": "npm:multer@^1.4.5-lts.1",
+        "zod": "npm:zod@^3.23.8",
+        "path": "node:path"
+    }
+}
