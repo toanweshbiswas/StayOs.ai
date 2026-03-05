@@ -1,7 +1,7 @@
 import { Router, Response } from 'express';
 import multer from 'multer';
 import { createClient } from '@supabase/supabase-js';
-import { authenticate, AuthRequest } from '../middleware/auth';
+import { authenticate, AuthRequest } from '../middleware/auth.ts';
 
 const router = Router();
 
