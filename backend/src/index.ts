@@ -3,14 +3,14 @@ import cors from 'cors';
 import path from 'path';
 import 'dotenv/config';
 
-import authRoutes from './routes/auth.ts';
-import propertiesRoutes from './routes/properties.ts';
-import waitlistRoutes from './routes/waitlist.ts';
-import maintenanceRoutes from './routes/maintenance.ts';
-import blogRoutes from './routes/blog.ts';
-import careersRoutes from './routes/careers.ts';
-import adminRoutes from './routes/admin.ts';
-import uploadRoutes from './routes/upload.ts';
+import authRoutes from '~/routes/auth.ts';
+import propertiesRoutes from '~/routes/properties.ts';
+import waitlistRoutes from '~/routes/waitlist.ts';
+import maintenanceRoutes from '~/routes/maintenance.ts';
+import blogRoutes from '~/routes/blog.ts';
+import careersRoutes from '~/routes/careers.ts';
+import adminRoutes from '~/routes/admin.ts';
+import uploadRoutes from '~/routes/upload.ts';
 
 const app = express();
 const PORT = process.env.PORT || 3001;

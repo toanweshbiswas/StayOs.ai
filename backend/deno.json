@@ -12,14 +12,7 @@
         "dev": "deno run --allow-all --watch --env-file=.env src/index.ts"
     },
     "imports": {
-        "./routes/auth": "./routes/auth.ts",
-        "./routes/properties": "./routes/properties.ts",
-        "./routes/waitlist": "./routes/waitlist.ts",
-        "./routes/maintenance": "./routes/maintenance.ts",
-        "./routes/blog": "./routes/blog.ts",
-        "./routes/careers": "./routes/careers.ts",
-        "./routes/admin": "./routes/admin.ts",
-        "./routes/upload": "./routes/upload.ts",
+        "~/": "./src/",
         "express": "npm:express@^4.19.2",
         "cors": "npm:cors@^2.8.5",
         "dotenv": "npm:dotenv@^16.4.5",
