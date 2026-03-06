@@ -1,5 +1,6 @@
 import { Router, Response } from 'express';
-import { PrismaClient } from '@prisma/client';
+import pkg from '@prisma/client';
+const { PrismaClient } = pkg;
 import bcrypt from 'bcryptjs';
 import { authenticate, requireAdmin, AuthRequest } from '../middleware/auth.ts';
 

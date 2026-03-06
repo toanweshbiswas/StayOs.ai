@@ -103,3 +103,22 @@ Require stack:
 Require stack:
 - /Users/anweshbiswas/Desktop/StayOs/backend/src/routes/upload.ts
 - /Users/anweshbiswas/Desktop/StayOs/backend/src/index.ts
+[INFO] 08:53:38 Restarting: /Users/anweshbiswas/Desktop/StayOs/backend/src/routes/auth.ts has been modified
+Error: Cannot find module '@supabase/supabase-js'
+Require stack:
+- /Users/anweshbiswas/Desktop/StayOs/backend/src/routes/upload.ts
+- /Users/anweshbiswas/Desktop/StayOs/backend/src/index.ts
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at require (node:internal/modules/helpers:182:18)
+    at Object.<anonymous> (/Users/anweshbiswas/Desktop/StayOs/backend/src/routes/upload.ts:3:1)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._compile (/Users/anweshbiswas/Desktop/StayOs/backend/node_modules/source-map-support/source-map-support.js:568:25)
+    at Module.m._compile (/private/var/folders/kp/v71z2z2567s9t6wbqx33mzlw0000gn/T/ts-node-dev-hook-7945370089371431.js:69:33)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at require.extensions..jsx.require.extensions..js (/private/var/folders/kp/v71z2z2567s9t6wbqx33mzlw0000gn/T/ts-node-dev-hook-7945370089371431.js:114:20)
+[ERROR] 08:53:39 Error: Cannot find module '@supabase/supabase-js'
+Require stack:
+- /Users/anweshbiswas/Desktop/StayOs/backend/src/routes/upload.ts
+- /Users/anweshbiswas/Desktop/StayOs/backend/src/index.ts
